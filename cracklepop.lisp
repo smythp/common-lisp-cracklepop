@@ -12,11 +12,11 @@
   (if list
       (let ((number (pop list)))
 	(progn
-	  (print
-	   (cond ((and (= (mod number 3) 0) (= (mod number 5) 0)) "CracklePop")
-		 ((= (mod number 3) 0) "Crackle")
-		 ((= (mod number 5) 0) "Pop")
-		 (t  number)))
+	  (format t
+		  (cond ((and (= (mod number 3) 0) (= (mod number 5) 0)) "CracklePop~%")
+			((= (mod number 3) 0) "Crackle~%")
+			((= (mod number 5) 0) "Pop~%")
+			(t  (concatenate 'string (write-to-string number) "~%"))))
 	  (cracklepop list)))))
 
 
